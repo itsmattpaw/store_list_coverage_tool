@@ -12,6 +12,8 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'sinatra-flash'
+gem 'nokogiri'
+gem 'open-uri'
 
 group :development, :test do 
   gem 'dotenv'

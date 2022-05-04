@@ -12,13 +12,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    @posts = Post.all
-    erb :"/posts/index.html"
+    @reports = Report.all
+    erb :"/reports/index.html"
   end
 
   not_found do
     flash[:error] = "Whoops! Couldn't find that route"
-    redirect "/posts"
+    redirect "/reports"
   end
 
   private 

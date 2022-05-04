@@ -1,0 +1,21 @@
+<h1>Edit Report</h1>
+
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @report.errors.count %> error(s) prohibited this report from being saved:</h2>
+ 
+    <ul>
+    <% @report.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<form method="post" action="/reports/<%= @report.id %>">
+  <input type="hidden" name="_method" value="patch" />
+  <p>
+    <div><label for="title">Title</label></div>
+    <input id="title" type="text" name="report[title]" value="<%= @report.title %>" />
+  </p>
+  <input type="submit" value="Update Report" />
+</form>

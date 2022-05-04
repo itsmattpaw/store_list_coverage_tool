@@ -1,0 +1,12 @@
+<h1><%= @report.title %></h1>
+<p><%= @report.user %></p>
+<p><%= @report.content %></p>
+<% if authorize_report(@report) %>
+  <div>
+    <a href="/reports/<%= @report.id %>/edit"><button>Edit</button></a> 
+    <form method="post" action="/reports/<%= @report.id %>" style="display: inline-block;">
+      <input type="hidden" name="_method" value="delete" />
+      <input type="submit" value="Delete" />
+    </form>
+  </div>
+<% end %>
