@@ -1,13 +1,13 @@
-class CreateSlvcdatas < ActiveRecord::Migration
+class CreateSlvcdata < ActiveRecord::Migration
   def change
-    create_table :slvcdatas do |t|
+    create_table :slvcdata do |t|
       t.integer :zip
-      t.integer :company
+      t.string :company
       t.string :market
       t.string :wrap 
       t.integer :hh_count 
       t.string :newspaper
-      t.string :highest_circulation
+      t.integer :highest_circulation
       t.string :newspaper_penetration
       t.string :county
       t.string :county_code

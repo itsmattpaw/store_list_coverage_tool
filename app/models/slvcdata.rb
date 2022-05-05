@@ -1,3 +1,3 @@
-class SlvcData < ActiveRecord::Base
+class Slvcdata < ActiveRecord::Base
 
 end
