@@ -37,7 +37,7 @@ class SlvcGenerator
         h = CSV.read(file)
         i = 1
         h.each do |row|
-            if Company.exist?(row[0]
+            if Company.exists?(row[0])
                 comp = Company.find_by(name: row[0])
             else
                comp = Company.create(name: row[0])
@@ -50,10 +50,10 @@ class SlvcGenerator
                 zip: row[4],
                 naics: row[5],
                 sic: row[6],
-                company_id: comp.id
-                type: "biz_list"
+                company_id: comp.id,
+                source: "biz_list"
             )
-            puts "finished #{i++}"
+            puts "finished #{i+=1}"
         end
     end
 end

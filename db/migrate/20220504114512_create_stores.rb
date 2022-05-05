@@ -9,7 +9,7 @@ class CreateStores < ActiveRecord::Migration
       t.integer :naics
       t.integer :sic 
       t.integer :company_id
-      t.string :type 
+      t.string :source
     end
   end
 end

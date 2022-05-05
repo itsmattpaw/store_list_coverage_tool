@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20220504114539) do
     t.integer "naics"
     t.integer "sic"
     t.integer "company_id"
-    t.string  "type"
+    t.string  "source"
   end
 
   create_table "users", force: :cascade do |t|
