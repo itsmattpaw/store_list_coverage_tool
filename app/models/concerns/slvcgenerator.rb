@@ -32,4 +32,28 @@ class SlvcGenerator
             puts "finished: #{i+=1}"
         end
     end
+
+    def self.business_list_update(file)
+        h = CSV.read(file)
+        i = 1
+        h.each do |row|
+            if Company.exist?(row[0]
+                comp = Company.find_by(name: row[0])
+            else
+               comp = Company.create(name: row[0])
+            end
+            Store.create(
+                coname: row[0],
+                street: row[1],
+                city: row[2],
+                state: row[3],
+                zip: row[4],
+                naics: row[5],
+                sic: row[6],
+                company_id: comp.id
+                type: "biz_list"
+            )
+            puts "finished #{i++}"
+        end
+    end
 end

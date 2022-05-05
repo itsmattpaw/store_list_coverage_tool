@@ -31,4 +31,11 @@ class UsersController < ApplicationController
     erb :'users/admin'
   end
 
+  post '/admin/biz-list' do
+    SlvcGenerator.business_list_update("./100k_business_list.csv")
+    @message = "success"
+    @user = current_user
+    erb :"users/admin"
+  end
+
 end
