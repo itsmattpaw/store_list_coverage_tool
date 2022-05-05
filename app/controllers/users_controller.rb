@@ -13,4 +13,22 @@ class UsersController < ApplicationController
       erb :'users/new'
     end
   end
+
+  get '/admin' do
+    redirect_if_not_logged_in
+    if admin?
+      @user = current_user
+      erb :"users/admin"
+    else
+      redirect '/'
+    end
+  end
+
+  post '/admin/slvc' do
+    SlvcGenerator.slvc_data_update("./slvc_all_5_3_22.csv")
+    @message = "success"
+    @user = current_user
+    erb :'users/admin'
+  end
+
 end

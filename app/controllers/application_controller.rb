@@ -38,4 +38,8 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  def admin?
+    current_user.account_type == "admin"
+  end
+
 end
