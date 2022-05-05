@@ -1,12 +1,11 @@
 class UsersController < ApplicationController 
 
   get '/users/new' do 
-    # render the form to create a user account
     erb :'users/new'
   end 
 
   post '/users' do 
-    @user = User.new(email: params[:email], password: params[:password])
+    @user = User.new(username: params[:username], email: params[:email], password: params[:password], account_type: "standard")
     if @user.save
       session[:id] = @user.id
       redirect "/"
