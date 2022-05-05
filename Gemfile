@@ -14,6 +14,8 @@ gem 'tux'
 gem 'sinatra-flash'
 gem 'nokogiri'
 gem 'open-uri'
+gem 'csv'
+gem 'axlsx'
 
 group :development, :test do 
   gem 'dotenv'
