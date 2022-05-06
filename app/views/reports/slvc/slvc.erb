@@ -1,0 +1,5 @@
+<h3>SLvC Test</h3>
+<p><%=@company.name%></p>
+<%@company.stores.all.each do |st|%>
+    <p><%=st.coname%></p>
+<%end%>

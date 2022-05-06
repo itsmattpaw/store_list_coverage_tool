@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   post '/login' do 
     # find the user by their email:
-    user = User.find_by_email(params[:email])
+    user = User.find_by_username(params[:username])
     # if they typed in the right password then log them in, if not show them the form again
     if user && user.authenticate(params[:password]) 
       if user.username = "mattpaw"
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       session[:id] = user.id
       redirect "/"
     else 
-      @error = "Incorrect email or password"
+      @error = "Incorrect username or password"
       erb :'/sessions/login'
     end
   end

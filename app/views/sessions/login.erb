@@ -1,13 +1,18 @@
+
 <h1>Log In</h1>
 <%= @error %>
 <form method="post" action="/login">
-  <p>
-    <div><label for="email">Email</label></div>
-    <input type="email" name="email" id="email" />
+    <p>
+    <div class="input-container">
+      <input type="text" id="username" name="username" class="text-input" autocomplete="off" placeholder="Enter your username" required />
+      <label class="label" for="username">Username</label>
+    </div>
   </p>
-  <p>
-    <div><label for="password">Password</label></div>
-    <input type="password" name="password" id="password" />
+    <p>
+    <div class="input-container">
+      <input type="password" id="password" name="password" class="text-input" autocomplete="off" placeholder="Enter your password" required />
+      <label class="label" for="password">Password</label>
+    </div>
   </p>
   <input type="submit" value="Sign In"/>
 </form>

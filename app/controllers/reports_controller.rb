@@ -57,6 +57,11 @@ class ReportsController < ApplicationController
     redirect "/reports"
   end
 
+  get "/company/test" do
+    @company = Company.all.first
+    erb :"reports/slvc"
+  end
+
   private 
 
   def set_report

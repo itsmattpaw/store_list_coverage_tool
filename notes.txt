@@ -1,0 +1,5 @@
+search for company
+    if we have show dashboard of company
+    show potential other companies with similar coname
+    offer option to run slvc
+    offer option to setup store list scrape 
