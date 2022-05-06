@@ -37,10 +37,13 @@ class SlvcGenerator
         h = CSV.read(file)
         i = 1
         h.each do |row|
-            if Company.exists?(row[0])
+            if Company.exists?(name: row[0])
                 comp = Company.find_by(name: row[0])
             else
                comp = Company.create(name: row[0])
+            end
+            if !comp
+                binding.pry
             end
             Store.create(
                 coname: row[0],
