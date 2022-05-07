@@ -1,0 +1,12 @@
+<h2>New SLvC</h2>
+<form method="get" action="/slvc">
+    <div class="input-container">
+        <input list="company" class="text-input" placeholder="Select a Company.."/>
+        <label class="label" for="company">Company</label>
+        <datalist id="company" name="company">
+            <%Company.all.each do |c|%>
+                <option name="<%=c.name%>"><%=c.name%></option>
+            <%end%>
+        </datalist>
+    </div>
+</form>

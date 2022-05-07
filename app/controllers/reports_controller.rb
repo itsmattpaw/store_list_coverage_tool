@@ -62,6 +62,10 @@ class ReportsController < ApplicationController
     erb :"reports/slvc"
   end
 
+  get '/slvc/new' do
+    erb :"reports/slvc/new-slvc"
+  end
+
   private 
 
   def set_report
