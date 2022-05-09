@@ -1,16 +1,33 @@
 <h3>SLvC Test</h3>
+
+<table>
+    <tr>
+        <th>Company</th>
+        <th>Count</th>
+    </tr>
+    <!--
+    <tr>
+        <%compgeo = {}%>
+        <%@company.stores.all.each do |st|%>
+            <p><%=st.coname%></p>
+            <%if compgeo.include?(st.slvcdata.company)%>
+                <%compgeo[st.slvcdata.company] += 1%>
+            <%else%>
+                <%compgeo[st.slvcdata.company] = 1%>
+            <%end%>
+            <%compgeo.each do |key, value|%>
+            <p><%=key%></p>
+            <p><%=value%></p>
+        <%end%>
+        <p><%=st.zip%></p>
+        <%end%>
+    </tr>
+    -->
+    <tr>
+        <td><%=@company.name%></td>
+        <td><%=@company.stores.count%></td>
+    </tr>
+</table>
+
 <p><%=@company.name%></p>
-<%compgeo = {}%>
-<%@company.stores.all.each do |st|%>
-    <p><%=st.coname%></p>
-    <%if compgeo.include?(st.slvcdata.company)%>
-        <%compgeo[st.slvcdata.company] += 1%>
-    <%else%>
-        <%compgeo[st.slvcdata.company] = 1%>
-    <%end%>
-    <%compgeo.each do |key, value|%>
-        <p><%=key%></p>
-        <p><%=value%></p>
-    <%end%>
-    <p><%=st.zip%></p>
-<%end%>
+

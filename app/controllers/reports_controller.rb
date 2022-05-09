@@ -64,7 +64,14 @@ class ReportsController < ApplicationController
   end
 
   get '/slvc/new' do
+    redirect_if_not_logged_in
     erb :"reports/slvc/new-slvc"
+  end
+
+  post '/slvc/new' do
+    user = current_user
+    @company = Company.find_by(name: params[:company])
+    erb :'reports/slvc/slvc'
   end
 
   private 
