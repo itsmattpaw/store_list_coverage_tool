@@ -2,4 +2,6 @@
 <p><%=@company.name%></p>
 <%@company.stores.all.each do |st|%>
     <p><%=st.coname%></p>
+    <p><%=st.slvcdata%></p>
+    <p><%=st.zip%></p>
 <%end%>
