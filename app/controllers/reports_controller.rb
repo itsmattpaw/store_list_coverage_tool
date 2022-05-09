@@ -69,8 +69,19 @@ class ReportsController < ApplicationController
   end
 
   post '/slvc/new' do
-    user = current_user
+    @user = current_user
     @company = Company.find_by(name: params[:company])
+    @compgeo = {}
+    @company.stores.all.each do |st|
+      #binding.pry
+      if st.slvcdata
+        if @compgeo.include?(st.slvcdata.company.strip.to_sym)
+          @compgeo[st.slvcdata.company.strip.to_sym] += 1
+        else  
+          @compgeo[st.slvcdata.company.strip.to_sym] = 1
+        end
+      end
+    end
     erb :'reports/slvc/slvc'
   end
 
