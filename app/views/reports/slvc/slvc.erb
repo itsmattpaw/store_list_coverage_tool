@@ -1,7 +1,16 @@
 <h3>SLvC Test</h3>
 <p><%=@company.name%></p>
+<%compgeo = {}%>
 <%@company.stores.all.each do |st|%>
     <p><%=st.coname%></p>
-    <p><%=st.slvcdata%></p>
+    <%if compgeo.include?(st.slvcdata.company)%>
+        <%compgeo[st.slvcdata.company] += 1%>
+    <%else%>
+        <%compgeo[st.slvcdata.company] = 1%>
+    <%end%>
+    <%compgeo.each do |key, value|%>
+        <p><%=key%></p>
+        <p><%=value%></p>
+    <%end%>
     <p><%=st.zip%></p>
 <%end%>

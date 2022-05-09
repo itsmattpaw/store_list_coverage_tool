@@ -59,7 +59,7 @@ class ReportsController < ApplicationController
 
   get "/company/test" do
     @company = Company.all.first
-    binding.pry
+    #binding.pry
     erb :"reports/slvc/slvc"
   end
 
