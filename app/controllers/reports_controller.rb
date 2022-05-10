@@ -88,6 +88,12 @@ class ReportsController < ApplicationController
     erb :'reports/slvc/slvc'
   end
 
+  post '/slvc/down' do
+    @company = params[:company]
+    @compgeo = params[:compgeo]
+
+  end
+
   private 
 
   def set_report

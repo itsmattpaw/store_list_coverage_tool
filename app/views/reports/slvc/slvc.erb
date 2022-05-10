@@ -16,4 +16,9 @@
         <td><%=@blank%></td>
     </tr>
 </table>
+<form method="post" action="/slvc/down">
+    <%= hidden_field_tag 'company', @company  %>
+    <%= hidden_field_tag 'compgeo', @compgeo  %>
+    <input type="submit" value="Download" />
+</form>
 
