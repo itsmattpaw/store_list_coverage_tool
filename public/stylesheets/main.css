@@ -14,7 +14,6 @@
   /* --- Welcome Page Styles --- */
   body {
     background-color: lightblue;
-    color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
   }
@@ -28,7 +27,7 @@
   }
 
   .wrapper {
-    background: #1c1a23;
+    background: #fff; /* #1c1a23;*/
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -121,4 +120,28 @@
     font-size: 18px;
     line-height: 24px;
   }
+}
+
+/* SLvC */
+#slvc {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#slvc td, #slvc th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#slvc tr:nth-child(even){background-color: #f2f2f2;}
+
+#slvc tr:hover {background-color: #ddd;}
+
+#slvc th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
 }

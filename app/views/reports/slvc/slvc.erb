@@ -1,13 +1,9 @@
 <h3>SLvC Test</h3>
 
-<table>
+<table id="slvc">
     <tr>
-        <th>Company</th>
-        <th>Count</th>
-    </tr>
-    <tr>
-        <td><%=@company.name%></td>
-        <td><%=@company.stores.count%></td>
+        <th>Company (<%=@company.name%>)</th>
+        <th>Count: <%=@company.stores.count%></th>
     </tr>
     <%@compgeo.each do |key, value|%>
         <tr>
@@ -15,5 +11,9 @@
             <td><%=value%></td>
         </tr>
     <%end%>
+    <tr>
+        <td>Blank</td>
+        <td><%=@blank%></td>
+    </tr>
 </table>
 

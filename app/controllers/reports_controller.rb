@@ -72,6 +72,7 @@ class ReportsController < ApplicationController
     @user = current_user
     @company = Company.find_by(name: params[:company])
     @compgeo = {}
+    @blank = 0
     @company.stores.all.each do |st|
       #binding.pry
       if st.slvcdata
@@ -80,6 +81,8 @@ class ReportsController < ApplicationController
         else  
           @compgeo[st.slvcdata.company.strip.to_sym] = 1
         end
+      else  
+        @blank += 1
       end
     end
     erb :'reports/slvc/slvc'
