@@ -1,62 +1,5 @@
 class ReportsController < ApplicationController
 
-  # GET: /reports -> index
-  get "/reports" do
-    @reports = Report.all
-    erb :"/reports/index.html"
-  end
-
-  # GET: /reports/new -> new
-  get "/reports/new" do
-    redirect_if_not_logged_in
-    @report = Report.new
-    erb :"/reports/new.html"
-  end
-
-  # POST: /reports -> create
-  post "/reports" do
-    redirect_if_not_logged_in
-    @report = current_user.reports.build(title: params[:report][:title])
-    if @report.save
-      redirect "/reports"
-    else
-      erb :"/reports/new.html"
-    end
-  end
-
-  # GET: /reports/5 -> show
-  get "/reports/:id" do
-    set_report
-    erb :"/reports/show.html"
-  end
-
-  # GET: /posts/5/edit -> edit
-  get "/reports/:id/edit" do
-    set_report
-    redirect_if_not_authorized
-    erb :"/reports/edit.html"
-  end
-
-  # PATCH: /reports/5 -> update
-  patch "/reports/:id" do
-    set_report
-    redirect_if_not_authorized
-    if @report.update(title: params[:report][:title])
-      flash[:success] = "Report successfully updated"
-      redirect "/reports/#{@report.id}"
-    else 
-      erb :"/reports/edit.html"
-    end
-  end
-
-  # DELETE: /reports/5 - destroy
-  delete "/reports/:id" do
-    set_report
-    redirect_if_not_authorized
-    @report.destroy
-    redirect "/reports"
-  end
-
   get "/company/test" do
     @company = Company.all.first
     #binding.pry
@@ -87,10 +30,10 @@ class ReportsController < ApplicationController
     erb :'reports/slvc/slvc'
   end
 
-  post '/slvc/down' do
+  post '/slvc/download' do
     @company = params[:company]
     @compgeo = params[:compgeo]
-
+    erb :'reports/slvc/slvc'
   end
 
   private 
