@@ -8,6 +8,7 @@ class ReportsController < ApplicationController
 
   get '/slvc/new' do
     redirect_if_not_logged_in
+    
     erb :"reports/slvc/new-slvc"
   end
 
